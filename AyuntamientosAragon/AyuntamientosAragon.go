@@ -13,7 +13,7 @@ type Ayuntamiento struct {
 	Email  string
 }
 
-func GetAyuntamientosAragon() []Ayuntamiento {
+func Get() []Ayuntamiento {
 
 	//Inicializacion
 	c := colly.NewCollector()

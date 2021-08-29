@@ -9,7 +9,7 @@ import (
 
 func main() {
 
-	ayuntamientos := AyuntamientosAragon.GetAyuntamientosAragon()
+	ayuntamientos := AyuntamientosAragon.Get()
 	jsonAyuntamientos, _ := json.Marshal(ayuntamientos)
 	fmt.Println(string(jsonAyuntamientos))
 	fmt.Println(len(ayuntamientos))
