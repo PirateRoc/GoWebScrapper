@@ -1,31 +1,26 @@
 package AyuntamientosAragon
 
 import (
+	"log"
 	"strings"
 
+	"github.com/PirateRoc/GoWebScrapper/Ayuntamiento"
 	"github.com/gocolly/colly/v2"
 )
 
-// Modelo con la informacion de un ayuntamiento
-type Ayuntamiento struct {
-	Poblacion string
-	Email     string
-	Telefono  string
-	Web       string
-}
-
-func Get() []Ayuntamiento {
+func Get() []Ayuntamiento.Ayuntamiento {
 
 	//Inicializacion
 	c := colly.NewCollector(
 		colly.Async(),
 	)
-	var ayuntamientos []Ayuntamiento
+	var ayuntamientos []Ayuntamiento.Ayuntamiento
 	c.Limit(&colly.LimitRule{DomainGlob: "*", Parallelism: 16})
 	//Buscamos todos los links que empiecen con /aragon y los visitamos
 	c.OnHTML("a[href]", func(e *colly.HTMLElement) {
 		link := e.Attr("href")
 		if strings.HasPrefix(link, "/aragon") {
+			log.Println(link)
 			e.Request.Visit(e.Attr("href"))
 		}
 	})
@@ -68,7 +63,7 @@ func Get() []Ayuntamiento {
 			web = ""
 		}
 
-		ayuntamiento := Ayuntamiento{
+		ayuntamiento := Ayuntamiento.Ayuntamiento{
 			Poblacion: poblacion,
 			Email:     email,
 			Telefono:  telefono,
