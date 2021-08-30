@@ -5,27 +5,14 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/PirateRoc/GoWebScrapper/Ayuntamiento"
+	"github.com/PirateRoc/GoWebScrapper/AyuntamientosAragon"
 	"github.com/PirateRoc/GoWebScrapper/MySqlConnection"
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
 
-	//ayuntamientos := AyuntamientosAragon.Get()
-	ayuntamientos := []Ayuntamiento.Ayuntamiento{
-		{
-			Poblacion: "Casa",
-			Email:     "aa",
-			Telefono:  "aa",
-			Web:       "aa",
-		},
-		{
-			Poblacion: "Casa1",
-			Email:     "aa",
-			Telefono:  "aa",
-			Web:       "aa",
-		},
-	}
+	ayuntamientos := AyuntamientosAragon.Get()
+
 	MySqlConnection.Insert(ayuntamientos)
 	jsonAyuntamientos, _ := json.Marshal(ayuntamientos)
 	// dump results

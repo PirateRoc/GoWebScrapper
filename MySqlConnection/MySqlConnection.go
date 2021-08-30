@@ -10,7 +10,7 @@ import (
 
 func Insert(ayuntamientos []Ayuntamiento.Ayuntamiento) {
 
-	db, err := sql.Open("mysql", "root:password@tcp(127.0.0.1:3306)/Ayuntamientos")
+	db, err := sql.Open("mysql", "root:password@tcp(gowebscrapper_database_1:3306)/Ayuntamientos")
 	defer db.Close()
 
 	if err != nil {

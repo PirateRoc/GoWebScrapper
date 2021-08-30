@@ -73,7 +73,7 @@ func Get() []Ayuntamiento.Ayuntamiento {
 		ayuntamientos = append(ayuntamientos, ayuntamiento)
 	})
 	//Pagina de inicio
-	c.Visit("https://www.todoslosayuntamientos.es/index.php?bbaf263a157d2b4561bd2ad296554729=1&option=com_xsbayuntamientos&view=comunidades&task=getAyuntamientos&id_comunidad=2&xsb_elements=1000&xsb_offset=0")
+	c.Visit("https://www.todoslosayuntamientos.es/index.php?768a34652eaf93c2640d2d37fcc0dd0e=1&option=com_xsbayuntamientos&view=comunidades&task=getAyuntamientos&id_comunidad=2&xsb_elements=1000&xsb_offset=0")
 
 	c.Wait()
 	return ayuntamientos

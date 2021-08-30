@@ -14,9 +14,12 @@ services:
     image: mariadb
     environment:
       - MYSQL_ROOT_PASSWORD=password
-    
+    volumes: 
+      - db_data:/var/lib/mysql 
     networks:
       - mynet
 networks:
   mynet:
     driver: "bridge"
+volumes:
+  db_data: {}
