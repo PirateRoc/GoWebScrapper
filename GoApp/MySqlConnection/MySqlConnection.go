@@ -4,7 +4,7 @@ import (
 	"database/sql"
 	"log"
 
-	"github.com/PirateRoc/GoWebScrapper/Ayuntamiento"
+	"github.com/PirateRoc/GoWebScrapper/GoApp/Ayuntamiento"
 	_ "github.com/go-sql-driver/mysql"
 )
 

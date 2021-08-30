@@ -1,4 +1,4 @@
-module github.com/PirateRoc/GoWebScrapper
+module github.com/PirateRoc/GoWebScrapper/GoApp
 
 go 1.16
 

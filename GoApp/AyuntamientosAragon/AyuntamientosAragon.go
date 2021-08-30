@@ -4,7 +4,7 @@ import (
 	"log"
 	"strings"
 
-	"github.com/PirateRoc/GoWebScrapper/Ayuntamiento"
+	"github.com/PirateRoc/GoWebScrapper/GoApp/Ayuntamiento"
 	"github.com/gocolly/colly/v2"
 )
 
@@ -72,8 +72,12 @@ func Get() []Ayuntamiento.Ayuntamiento {
 
 		ayuntamientos = append(ayuntamientos, ayuntamiento)
 	})
+
+	c.OnError(func(r *colly.Response, err error) {
+		log.Println("Error:", err)
+	})
 	//Pagina de inicio
-	c.Visit("https://www.todoslosayuntamientos.es/index.php?768a34652eaf93c2640d2d37fcc0dd0e=1&option=com_xsbayuntamientos&view=comunidades&task=getAyuntamientos&id_comunidad=2&xsb_elements=1000&xsb_offset=0")
+	c.Visit("https://www.todoslosayuntamientos.es/index.php?dbc952433e12e70010c6e6ffbd433212=1&option=com_xsbayuntamientos&view=comunidades&task=getAyuntamientos&id_comunidad=2&xsb_elements=1000&xsb_offset=0")
 
 	c.Wait()
 	return ayuntamientos

@@ -5,8 +5,8 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/PirateRoc/GoWebScrapper/AyuntamientosAragon"
-	"github.com/PirateRoc/GoWebScrapper/MySqlConnection"
+	"github.com/PirateRoc/GoWebScrapper/GoApp/AyuntamientosAragon"
+	"github.com/PirateRoc/GoWebScrapper/GoApp/MySqlConnection"
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
